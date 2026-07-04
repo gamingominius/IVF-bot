@@ -1,9 +1,8 @@
 import pkg from 'discord.js';
-import restPkg from '@discordjs/rest';
+import { REST } from '@discordjs/rest';
 import { Routes } from 'discord-api-types/v9';
 
 const { Client, Intents, MessageActionRow, MessageButton, MessageEmbed } = pkg;
-const { REST } = restPkg;
 
 const client = new Client({
   intents: [
