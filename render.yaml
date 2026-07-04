@@ -2,8 +2,8 @@ services:
   - type: web
     name: discord-bot
     runtime: node
-    buildCommand: npm install pnpm && ./node_modules/.bin/pnpm install --no-frozen-lockfile && ./node_modules/.bin/pnpm --filter @workspace/api-server run build
-    startCommand: node --enable-source-maps artifacts/api-server/dist/index.mjs
+    buildCommand: npm install discord.js@13 @discordjs/rest discord-api-types express
+    startCommand: node bot.js
     envVars:
       - key: PORT
         value: 10000
