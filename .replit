@@ -39,4 +39,3 @@ args = "node artifacts/api-server/src/bot/index.js"
 [workflows.workflow.metadata]
 outputType = "console"
 
-
