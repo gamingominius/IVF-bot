@@ -1,5 +1,4 @@
-# Use Node.js 18 or higher
-modules = ["nodejs-18"]
+modules = ["nodejs-20"]
 
 # Run command for your bot
 run = "node index.js"
