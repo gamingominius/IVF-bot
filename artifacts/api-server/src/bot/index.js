@@ -18,6 +18,10 @@ const commands = [
     name: 'selfroles',
     description: 'Get the role selection embed',
   },
+  {
+    name: 'omi',
+    description: 'UwU~!!',
+  },
 ];
 
 const rest = new REST({ version: '9' }).setToken(process.env.DISCORD_TOKEN);
@@ -44,6 +48,10 @@ client.on('messageCreate', (message) => {
 });
 
 client.on('interactionCreate', async (interaction) => {
+  if (interaction.isCommand() && interaction.commandName === 'omi') {
+    return interaction.reply('UwU~!!');
+  }
+
   if (interaction.isCommand() && interaction.commandName === 'selfroles') {
     const embed = new MessageEmbed()
       .setTitle('Pick your roles')
