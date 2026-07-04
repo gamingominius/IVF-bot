@@ -1,11 +1,6 @@
-import express from 'express';
 import pkg from 'discord.js';
 import { REST } from '@discordjs/rest';
 import { Routes } from 'discord-api-types/v9';
-
-const app = express();
-app.get('/', (req, res) => res.send('Bot is running!'));
-app.listen(3000, () => console.log('Web server running on port 3000'));
 
 const { Client, Intents, MessageActionRow, MessageButton, MessageEmbed } = pkg;
 
