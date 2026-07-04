@@ -1,15 +1,22 @@
-modules = ["nodejs-24"]
+# Use Node.js 18 or higher
+modules = ["nodejs-18"]
+
+# Run command for your bot
+run = "node index.js"
 
 [deployment]
 router = "application"
 deploymentTarget = "autoscale"
 
 [deployment.postBuild]
-args = ["pnpm", "store", "prune"]
+args = ["npm", "install"]
 env = { "CI" = "true" }
 
+[agent]
+stack = "NODEJS"
+expertMode = true
+
 [workflows]
-run = "node index.js"
 runButton = "Project"
 
 [[workflows.workflow]]
@@ -32,10 +39,4 @@ args = "node artifacts/api-server/src/bot/index.js"
 [workflows.workflow.metadata]
 outputType = "console"
 
-[agent]
-stack = "PNPM_WORKSPACE"
-expertMode = true
 
-[postMerge]
-path = "scripts/post-merge.sh"
-timeoutMs = 20000
